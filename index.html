@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AurumAlgo™ — The Gold Algorithm | XAUUSD M15 Indicator</title>
-<meta name="description" content="Professional Gold (XAUUSD) trading indicator for M15. VIP Champion: +258.3% return, Return/DD 14.3x, 58.4% win rate. Free, Pro, and VIP editions available.">
+<meta name="description" content="Professional Gold (XAUUSD) indicator for M15. VIP Champion: +259.5% return, Return/DD 14.4x. Founders Pricing available for first 50 members.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%230a0d14%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2272%22 font-size=%2270%22 fill=%22%23FFD700%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22>A</text></svg>">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,7 +27,9 @@ nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(10,1
 .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 30% 40%, rgba(255,215,0,0.08), transparent 50%), radial-gradient(circle at 70% 60%, rgba(255,215,0,0.05), transparent 50%); animation: pulse 8s ease-in-out infinite; }
 @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.8; } }
 .hero-content { position: relative; z-index: 1; text-align: center; }
-.badge { display: inline-block; padding: 6px 16px; border-radius: 20px; background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.3); color: var(--gold); font-size: 12px; margin-bottom: 24px; letter-spacing: 2px; }
+.badge { display: inline-block; padding: 8px 20px; border-radius: 20px; background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.4); color: var(--gold); font-size: 12px; margin-bottom: 24px; letter-spacing: 2px; font-weight: 600; }
+.badge-founders { background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,215,0,0.05)); border: 1px solid var(--gold); animation: glow 2s ease-in-out infinite; }
+@keyframes glow { 0%,100% { box-shadow: 0 0 0 rgba(255,215,0,0); } 50% { box-shadow: 0 0 20px rgba(255,215,0,0.5); } }
 .hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 800; line-height: 1.1; margin-bottom: 24px; background: linear-gradient(135deg, #fff 0%, var(--gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .hero p { font-size: 18px; color: var(--gray); max-width: 640px; margin: 0 auto 40px; }
 .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
@@ -36,6 +38,13 @@ nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(10,1
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,215,0,0.3); }
 .btn-secondary { background: transparent; color: var(--white); border: 1px solid rgba(255,215,0,0.4); }
 .btn-secondary:hover { border-color: var(--gold); background: rgba(255,215,0,0.05); }
+.founders-bar { background: linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,215,0,0.05)); border-top: 1px solid rgba(255,215,0,0.3); border-bottom: 1px solid rgba(255,215,0,0.3); padding: 20px 0; text-align: center; }
+.founders-bar-content { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.founders-bar-text { color: var(--gold); font-weight: 600; font-size: 14px; letter-spacing: 1px; }
+.founders-progress { display: flex; align-items: center; gap: 12px; }
+.progress-bar { width: 200px; height: 8px; background: rgba(0,0,0,0.4); border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,215,0,0.3); }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dark), var(--gold)); width: 24%; transition: width 0.5s; }
+.progress-text { color: var(--white); font-size: 13px; font-weight: 600; }
 .stats-bar { background: var(--bg-dark); padding: 40px 0; border-top: 1px solid rgba(255,215,0,0.1); border-bottom: 1px solid rgba(255,215,0,0.1); }
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
 .stat-value { font-size: 32px; font-weight: 800; color: var(--gold); font-family: Georgia, serif; margin-bottom: 4px; }
@@ -66,8 +75,11 @@ section { padding: 100px 0; }
 .price-card.featured::before { content: 'BEST VALUE'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--bg); font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 20px; letter-spacing: 2px; }
 .price-card:hover { transform: translateY(-4px); }
 .price-card.featured:hover { transform: scale(1.03) translateY(-4px); }
+.founders-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #ff1744, #d50000); color: #fff; font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 20px; letter-spacing: 2px; animation: pulse-tag 1.5s ease-in-out infinite; }
+@keyframes pulse-tag { 0%,100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.08); } }
 .price-tier { font-size: 14px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
 .price-amount { font-size: 48px; font-weight: 800; font-family: Georgia, serif; margin-bottom: 8px; }
+.price-amount-old { font-size: 20px; color: var(--gray); text-decoration: line-through; margin-left: 8px; font-weight: 400; }
 .price-amount span { font-size: 16px; color: var(--gray); font-weight: 400; }
 .price-desc { color: var(--gray); font-size: 14px; margin-bottom: 24px; }
 .price-features { list-style: none; margin-bottom: 32px; }
@@ -99,7 +111,7 @@ footer { background: var(--bg-dark); padding: 60px 0 30px; border-top: 1px solid
 .footer-col ul li a { color: var(--gray); text-decoration: none; font-size: 14px; }
 .footer-col ul li a:hover { color: var(--gold); }
 .footer-bottom { padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; color: var(--gray); font-size: 13px; }
-@media (max-width: 768px) { .nav-links { display: none; } .stats-grid { grid-template-columns: repeat(2, 1fr); } .footer-grid { grid-template-columns: 1fr; } .price-card.featured { transform: none; } section { padding: 60px 0; } }
+@media (max-width: 768px) { .nav-links { display: none; } .stats-grid { grid-template-columns: repeat(2, 1fr); } .footer-grid { grid-template-columns: 1fr; } .price-card.featured { transform: none; } section { padding: 60px 0; } .progress-bar { width: 150px; } }
 </style>
 </head>
 <body>
@@ -118,18 +130,27 @@ footer { background: var(--bg-dark); padding: 60px 0 30px; border-top: 1px solid
 </div></nav>
 
 <section class="hero"><div class="container hero-content">
-<div class="badge">🏆 VIP CHAMPION — RETURN/DD 14.3x</div>
+<div class="badge badge-founders">🚀 FOUNDERS PRICING — FIRST 50 MEMBERS ONLY</div>
 <h1>The Gold Algorithm<br>for Serious Traders</h1>
-<p>Professional XAUUSD indicator specialized for M15. VIP Edition: <strong class="gold-text">+258.3%</strong> verified return, Return/DD 14.3x, and only 18.1% max drawdown.</p>
+<p>Professional XAUUSD indicator specialized for M15. VIP Edition: <strong class="gold-text">+259.5%</strong> verified return, Return/DD 14.4x, and only 18.1% max drawdown.</p>
 <div class="hero-buttons">
-<a href="#pricing" class="btn btn-primary">🚀 View Editions</a>
+<a href="#pricing" class="btn btn-primary">🚀 Claim Founders Price</a>
 <a href="#about" class="btn btn-secondary">Our Story</a>
 </div></div></section>
 
+<div class="founders-bar"><div class="container founders-bar-content">
+<span class="founders-bar-text">🎁 FOUNDERS PRICING ACTIVE</span>
+<div class="founders-progress">
+<div class="progress-bar"><div class="progress-fill"></div></div>
+<span class="progress-text">12 / 50 Slots Taken</span>
+</div>
+<span class="founders-bar-text">⏳ 38 Remaining</span>
+</div></div>
+
 <div class="stats-bar"><div class="container"><div class="stats-grid">
-<div><div class="stat-value">+258.3%</div><div class="stat-label">VIP Return</div></div>
-<div><div class="stat-value">14.3x</div><div class="stat-label">Return / DD</div></div>
-<div><div class="stat-value">58.4%</div><div class="stat-label">Win Rate</div></div>
+<div><div class="stat-value">+259.5%</div><div class="stat-label">VIP Return</div></div>
+<div><div class="stat-value">14.4x</div><div class="stat-label">Return / DD</div></div>
+<div><div class="stat-value">58.9%</div><div class="stat-label">Win Rate</div></div>
 <div><div class="stat-value">18.1%</div><div class="stat-label">Max Drawdown</div></div>
 </div></div></div>
 
@@ -148,16 +169,16 @@ footer { background: var(--bg-dark); padding: 60px 0 30px; border-top: 1px solid
 <div class="section-title"><h2>Verified <span class="gold-text">Performance</span></h2><p>Backtested on OANDA:XAUUSD · M15</p></div>
 <div class="specs-box"><h3>◆ OFFICIAL SPECIFICATIONS</h3><p>Symbol: <strong>XAUUSD (Gold)</strong> · Timeframe: <strong>M15</strong> · Profile: <strong>Scalper</strong> · Risk: <strong>1% per trade</strong></p></div>
 <div class="perf-grid">
-<div class="perf-card"><div class="perf-value">+258.3%</div><div class="perf-label">VIP Return</div></div>
-<div class="perf-card"><div class="perf-value">14.3x</div><div class="perf-label">Return / DD</div></div>
-<div class="perf-card"><div class="perf-value">58.4%</div><div class="perf-label">Win Rate</div></div>
+<div class="perf-card"><div class="perf-value">+259.5%</div><div class="perf-label">VIP Return</div></div>
+<div class="perf-card"><div class="perf-value">14.4x</div><div class="perf-label">Return / DD</div></div>
+<div class="perf-card"><div class="perf-value">58.9%</div><div class="perf-label">Win Rate</div></div>
 <div class="perf-card"><div class="perf-value">1.91</div><div class="perf-label">Profit Factor</div></div>
 <div class="perf-card"><div class="perf-value">18.1%</div><div class="perf-label">Max Drawdown</div></div>
-<div class="perf-card"><div class="perf-value">89</div><div class="perf-label">Total Trades</div></div>
+<div class="perf-card"><div class="perf-value">90</div><div class="perf-label">Total Trades</div></div>
 </div></div></section>
 
 <section id="pricing"><div class="container">
-<div class="section-title"><h2>Choose Your <span class="gold-text">Edition</span></h2><p>Start free, upgrade when you're ready.</p></div>
+<div class="section-title"><h2>Choose Your <span class="gold-text">Edition</span></h2><p>🚀 Founders Pricing — First 50 members get locked-in rates for life.</p></div>
 <div class="pricing-grid">
 
 <div class="price-card">
@@ -168,8 +189,8 @@ footer { background: var(--bg-dark); padding: 60px 0 30px; border-top: 1px solid
 <li>Trend Strategy</li>
 <li>Stair-Step + Trailing Stop</li>
 <li>Session Filter</li>
-<li>Max Daily Limit: 1</li>
-<li><strong class="gold-text">+107.3% · WR 67.4%</strong></li>
+<li>Max Daily Limit: 3</li>
+<li><strong class="gold-text">+121.1% · WR 63.2%</strong></li>
 <li class="disabled">Breakout Strategy</li>
 <li class="disabled">PRIME Signals</li>
 </ul>
@@ -177,46 +198,58 @@ footer { background: var(--bg-dark); padding: 60px 0 30px; border-top: 1px solid
 </div>
 
 <div class="price-card featured">
+<div class="founders-tag">🚀 FOUNDERS PRICE</div>
 <div class="price-tier">⭐ Pro</div>
-<div class="price-amount">$39<span>/month</span></div>
+<div class="price-amount">$19<span class="price-amount-old">$29</span><span>/month</span></div>
 <div class="price-desc">Quality Sniper. Trend + Breakout strategies.</div>
 <ul class="price-features">
 <li>Trend + Breakout</li>
 <li>Stair-Step + Trailing Stop</li>
-<li>Max Daily Limit: 2</li>
+<li>Max Daily Limit: 4</li>
 <li>Dual Circuit Breaker</li>
-<li><strong class="gold-text">+210.5% · Return/DD 12.2x</strong></li>
+<li><strong class="gold-text">+221% · Return/DD 10.8x</strong></li>
 <li>3 Symbols</li>
 <li class="disabled">PRIME Signals</li>
 </ul>
-<a href="mailto:aurumalgo.official@gmail.com?subject=Pro%20Edition" class="price-cta price-cta-primary">Get Pro Edition</a>
+<a href="mailto:aurumalgo.official@gmail.com?subject=Founders%20Pro%20Edition" class="price-cta price-cta-primary">Claim Founders Price</a>
 </div>
 
 <div class="price-card">
+<div class="founders-tag">🚀 FOUNDERS PRICE</div>
 <div class="price-tier">👑 VIP Elite</div>
-<div class="price-amount">$59<span>/month</span></div>
-<div class="price-desc">Maximum power. All 3 strategies + 5 exclusive powers.</div>
+<div class="price-amount">$39<span class="price-amount-old">$59</span><span>/month</span></div>
+<div class="price-desc">Maximum power. All strategies + 5 exclusive powers.</div>
 <ul class="price-features">
 <li>Trend + Breakout + Range</li>
-<li><strong class="gold-text">⚡ PRIME Signals (52 fired)</strong></li>
-<li><strong class="gold-text">⚡ Re-entry Engine (55)</strong></li>
+<li><strong class="gold-text">⚡ PRIME Signals (51 fired)</strong></li>
+<li><strong class="gold-text">⚡ Re-entry Engine (52)</strong></li>
 <li><strong class="gold-text">⚡ Kill Zone Boost (12-15 UTC)</strong></li>
 <li><strong class="gold-text">⚡ Adaptive Max Daily</strong></li>
 <li><strong class="gold-text">⚡ Adaptive TP (ADX-based)</strong></li>
-<li><strong class="gold-text">+258.3% · Return/DD 14.3x 🏆</strong></li>
+<li><strong class="gold-text">+259.5% · Return/DD 14.4x 🏆</strong></li>
 <li>7 Symbols · News Filter</li>
 </ul>
-<a href="mailto:aurumalgo.official@gmail.com?subject=VIP%20Elite" class="price-cta price-cta-secondary">Get VIP Edition</a>
+<a href="mailto:aurumalgo.official@gmail.com?subject=Founders%20VIP%20Edition" class="price-cta price-cta-secondary">Claim Founders Price</a>
 </div>
 
-</div></div></section>
+</div>
+
+<div class="specs-box" style="margin-top: 40px; max-width: 800px;">
+<h3>🎁 LIFETIME FOUNDERS DEAL</h3>
+<p style="font-size: 14px; margin-bottom: 20px;">Pay once, own forever. Only 50 slots.</p>
+<p style="font-size: 28px; font-family: Georgia, serif; color: var(--gold); margin-bottom: 12px;"><span style="text-decoration: line-through; color: var(--gray); font-size: 20px;">$499</span> → <strong>$249</strong></p>
+<p style="font-size: 13px; color: var(--gray); margin-bottom: 20px;">Includes all future updates · VIP access forever · Priority support</p>
+<a href="mailto:aurumalgo.official@gmail.com?subject=Founders%20Lifetime" class="btn btn-primary" style="display: inline-block;">💎 Claim Lifetime Deal</a>
+</div>
+
+</div></section>
 
 <section id="about" class="brand-story"><div class="container">
 <div class="section-title"><h2>Our <span class="gold-text">Story</span></h2></div>
 <div class="story-content">
 <div class="story-quote">"AURUM" — the Latin word for gold. Today, we've combined that timeless value with modern technology.</div>
 <p><strong>AurumAlgo™</strong> was born from a simple frustration: most trading indicators either work in theory but fail in practice.</p>
-<p>We spent years testing, refining, and validating. We went through over <strong>10 iterations</strong>. We tested and rejected 5+ features that seemed promising but hurt performance. The result: <strong>VIP Edition with Return/DD ratio of 14.3x</strong> — achieved by fewer than 1% of trading strategies worldwide.</p>
+<p>We spent years testing, refining, and validating. We went through over <strong>10 iterations</strong>. We tested and rejected 5+ features that seemed promising but hurt performance. The result: <strong>VIP Edition with Return/DD ratio of 14.4x</strong> — achieved by fewer than 1% of trading strategies worldwide.</p>
 <p>We built AurumAlgo for traders who value <span class="gold-text">precision over hype</span>, and <span class="gold-text">consistency over gambling</span>.</p>
 <p style="margin-top: 32px; color: var(--gold); font-weight: 600;">— The AurumAlgo Team</p>
 </div></div></section>
@@ -226,29 +259,31 @@ footer { background: var(--bg-dark); padding: 60px 0 30px; border-top: 1px solid
 <div class="faq-list">
 <div class="faq-item"><div class="faq-q">What is AurumAlgo™?</div><div class="faq-a">Professional trading indicator for Gold (XAUUSD) on TradingView, specialized for the M15 timeframe. Available in Free, Pro, and VIP editions.</div></div>
 
+<div class="faq-item"><div class="faq-q">What is Founders Pricing?</div><div class="faq-a">The first 50 members get <strong>locked-in lifetime pricing</strong> at a discount. After 50 slots fill up, prices increase to standard rate. Founders keep their discounted price forever — even as we raise prices for new customers.</div></div>
+
 <div class="faq-item"><div class="faq-q">Which timeframe and symbol?</div><div class="faq-a">Optimized exclusively for XAUUSD on the M15 (15-minute) timeframe. Not tested on H1 or H4.</div></div>
 
-<div class="faq-item"><div class="faq-q">What's the difference between Free, Pro, and VIP?</div><div class="faq-a"><strong>Free</strong>: Trend strategy only, +107.3% · 67.4% WR. <strong>Pro</strong>: Trend + Breakout, +210.5%, Return/DD 12.2x. <strong>VIP</strong>: All 3 strategies + 5 exclusive powers (PRIME, Re-entry, Kill Zone, Adaptive Max Daily, Adaptive TP), +258.3%, Return/DD 14.3x.</div></div>
+<div class="faq-item"><div class="faq-q">What's the difference between Free, Pro, and VIP?</div><div class="faq-a"><strong>Free</strong>: Trend only, +121.1% · WR 63.2%. <strong>Pro</strong>: Trend + Breakout, +221%, Return/DD 10.8x. <strong>VIP</strong>: All 3 strategies + 5 exclusive powers, +259.5%, Return/DD 14.4x.</div></div>
 
-<div class="faq-item"><div class="faq-q">Is it suitable for beginners?</div><div class="faq-a">Yes. The Free Edition includes clear BUY/SELL signals, Stair-Step protection, and only 1 trade per day — extremely beginner-friendly.</div></div>
+<div class="faq-item"><div class="faq-q">Is it suitable for beginners?</div><div class="faq-a">Yes. The Free Edition includes clear BUY/SELL signals, Stair-Step protection, and only 3 trades per day max — beginner-friendly.</div></div>
 
-<div class="faq-item"><div class="faq-q">How many signals per day?</div><div class="faq-a"><strong>Free</strong>: 1 max. <strong>Pro</strong>: 2 max. <strong>VIP</strong>: 3-10 adaptive based on ADX and Kill Zone. Typically 1-3 signals daily; zero on quiet days is normal.</div></div>
+<div class="faq-item"><div class="faq-q">How many signals per day?</div><div class="faq-a"><strong>Free</strong>: 3 max. <strong>Pro</strong>: 4 max. <strong>VIP</strong>: up to 10 (adaptive based on ADX and Kill Zone). Typically 1-3 signals daily; zero on quiet days is normal.</div></div>
 
-<div class="faq-item"><div class="faq-q">What is Return/DD Ratio?</div><div class="faq-a">Return divided by Max Drawdown. Our VIP's 14.3x means every 1% of drawdown produced 14.3% of return. It's a more meaningful metric than Sharpe for scalping strategies.</div></div>
+<div class="faq-item"><div class="faq-q">What is Return/DD Ratio?</div><div class="faq-a">Return divided by Max Drawdown. Our VIP's 14.4x means every 1% of drawdown produced 14.4% of return. It's a more meaningful metric than Sharpe for scalping strategies.</div></div>
 
 <div class="faq-item"><div class="faq-q">Does it repaint signals?</div><div class="faq-a">No. All signals confirm only on candle close (barstate.isconfirmed).</div></div>
 
 <div class="faq-item"><div class="faq-q">What is the Circuit Breaker?</div><div class="faq-a">After 3 consecutive losses, pause 12 hours. After 5 losses, pause 2 days. Protects capital during adverse market conditions.</div></div>
 
-<div class="faq-item"><div class="faq-q">What are the VIP exclusive powers?</div><div class="faq-a"><strong>PRIME Signals</strong>: Confluence-based high-confidence entries (52 fired in backtest). <strong>Re-entry</strong>: Fast recovery after wins (1-bar cooldown). <strong>Kill Zone</strong>: 50% capacity boost during 12-15 UTC. <strong>Adaptive Max Daily</strong>: Auto-adjusts based on ADX. <strong>Adaptive TP</strong>: Dynamic take-profit based on market strength.</div></div>
+<div class="faq-item"><div class="faq-q">What are the VIP exclusive powers?</div><div class="faq-a"><strong>PRIME Signals</strong>: Confluence-based entries (51 fired in backtest). <strong>Re-entry</strong>: Fast recovery after wins (1-bar cooldown). <strong>Kill Zone</strong>: 50% capacity boost during 12-15 UTC. <strong>Adaptive Max Daily</strong>: Auto-adjusts based on ADX. <strong>Adaptive TP</strong>: Dynamic take-profit based on market strength.</div></div>
 
 <div class="faq-item"><div class="faq-q">How do I get support?</div><div class="faq-a">Email: aurumalgo.official@gmail.com — 24-48 hour response time.</div></div>
 </div></div></section>
 
 <section class="cta-section"><div class="container">
 <h2>Ready to Trade <span class="gold-text">Smarter?</span></h2>
-<p>Join traders using AurumAlgo to trade Gold with precision.</p>
-<a href="mailto:aurumalgo.official@gmail.com" class="btn btn-primary">📧 Contact Us</a>
+<p>🚀 Only 38 Founders slots remaining. Claim yours today.</p>
+<a href="#pricing" class="btn btn-primary">🚀 Claim Founders Price</a>
 </div></section>
 
 <footer id="contact"><div class="container">
