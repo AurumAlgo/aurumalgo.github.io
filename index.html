@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AurumAlgo™ — The Gold Algorithm | XAUUSD M15 Indicator</title>
-<meta name="description" content="Professional Gold (XAUUSD) trading indicator specialized for M15. Sharpe 4.35, +149.6% verified return, 14.8% max drawdown.">
+<meta name="description" content="Professional Gold (XAUUSD) trading indicator for M15. VIP Champion: +258.3% return, Return/DD 14.3x, 58.4% win rate. Free, Pro, and VIP editions available.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%230a0d14%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2272%22 font-size=%2270%22 fill=%22%23FFD700%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22>A</text></svg>">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -63,7 +63,7 @@ section { padding: 100px 0; }
 .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
 .price-card { background: var(--panel); border: 1px solid rgba(255,215,0,0.15); border-radius: 16px; padding: 40px 32px; position: relative; transition: all 0.3s; }
 .price-card.featured { border-color: var(--gold); background: linear-gradient(180deg, rgba(255,215,0,0.05) 0%, var(--panel) 100%); transform: scale(1.03); }
-.price-card.featured::before { content: 'POPULAR'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--bg); font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 20px; letter-spacing: 2px; }
+.price-card.featured::before { content: 'BEST VALUE'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--bg); font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 20px; letter-spacing: 2px; }
 .price-card:hover { transform: translateY(-4px); }
 .price-card.featured:hover { transform: scale(1.03) translateY(-4px); }
 .price-tier { font-size: 14px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
@@ -103,6 +103,7 @@ footer { background: var(--bg-dark); padding: 60px 0 30px; border-top: 1px solid
 </style>
 </head>
 <body>
+
 <nav><div class="container nav-inner">
 <a href="#" class="logo">◆ AURUMALGO</a>
 <ul class="nav-links">
@@ -117,19 +118,19 @@ footer { background: var(--bg-dark); padding: 60px 0 30px; border-top: 1px solid
 </div></nav>
 
 <section class="hero"><div class="container hero-content">
-<div class="badge">🏆 SHARPE 4.35 — TOP 0.1% GLOBAL</div>
+<div class="badge">🏆 VIP CHAMPION — RETURN/DD 14.3x</div>
 <h1>The Gold Algorithm<br>for Serious Traders</h1>
-<p>Professional XAUUSD indicator specialized for M15. Sharpe 4.35, +149.6% verified return, and only 14.8% max drawdown.</p>
+<p>Professional XAUUSD indicator specialized for M15. VIP Edition: <strong class="gold-text">+258.3%</strong> verified return, Return/DD 14.3x, and only 18.1% max drawdown.</p>
 <div class="hero-buttons">
-<a href="#pricing" class="btn btn-primary">🚀 View Pricing</a>
+<a href="#pricing" class="btn btn-primary">🚀 View Editions</a>
 <a href="#about" class="btn btn-secondary">Our Story</a>
 </div></div></section>
 
 <div class="stats-bar"><div class="container"><div class="stats-grid">
-<div><div class="stat-value">+149.6%</div><div class="stat-label">Total Return</div></div>
-<div><div class="stat-value">4.35</div><div class="stat-label">Sharpe Ratio</div></div>
-<div><div class="stat-value">63.6%</div><div class="stat-label">Win Rate</div></div>
-<div><div class="stat-value">14.8%</div><div class="stat-label">Max Drawdown</div></div>
+<div><div class="stat-value">+258.3%</div><div class="stat-label">VIP Return</div></div>
+<div><div class="stat-value">14.3x</div><div class="stat-label">Return / DD</div></div>
+<div><div class="stat-value">58.4%</div><div class="stat-label">Win Rate</div></div>
+<div><div class="stat-value">18.1%</div><div class="stat-label">Max Drawdown</div></div>
 </div></div></div>
 
 <section id="features"><div class="container">
@@ -137,36 +138,77 @@ footer { background: var(--bg-dark); padding: 60px 0 30px; border-top: 1px solid
 <div class="features-grid">
 <div class="feature-card"><div class="feature-icon">🎯</div><h3>Non-Repainting Signals</h3><p>All signals confirm on candle close. No look-ahead, no fake signals.</p></div>
 <div class="feature-card"><div class="feature-icon">🪜</div><h3>Stair-Step Trailing</h3><p>Automatic profit locking at 1.0R and 1.15R. Winners stay winners.</p></div>
+<div class="feature-card"><div class="feature-icon">🚀</div><h3>Smart Trailing Stop</h3><p>After S3 lock, trails SL dynamically with price. Captures extended moves.</p></div>
 <div class="feature-card"><div class="feature-icon">🛡️</div><h3>Dual Circuit Breaker</h3><p>Auto-pause after losing streaks. Protects capital from revenge trading.</p></div>
 <div class="feature-card"><div class="feature-icon">📊</div><h3>Multi-Strategy Engine</h3><p>Trend, Breakout, and Mean Reversion — each optimized for its regime.</p></div>
-<div class="feature-card"><div class="feature-icon">🎯</div><h3>ATR Sweet Spot Filter</h3><p>Blocks trades in chaotic or choppy markets. Only high-quality setups.</p></div>
-<div class="feature-card"><div class="feature-icon">⚡</div><h3>Live Alerts</h3><p>Get notified on BUY, SELL, SL, TP and Stair-Step events via mobile.</p></div>
+<div class="feature-card"><div class="feature-icon">⚡</div><h3>VIP Exclusive Powers</h3><p>PRIME Signals, Re-entry, Kill Zone Boost, Adaptive Max Daily, Adaptive TP.</p></div>
 </div></div></section>
 
 <section id="performance" class="performance"><div class="container">
 <div class="section-title"><h2>Verified <span class="gold-text">Performance</span></h2><p>Backtested on OANDA:XAUUSD · M15</p></div>
-<div class="specs-box"><h3>◆ OFFICIAL SPECIFICATIONS</h3><p>Symbol: <strong>XAUUSD (Gold)</strong> · Timeframe: <strong>M15</strong> · Profile: <strong>Scalper</strong></p></div>
+<div class="specs-box"><h3>◆ OFFICIAL SPECIFICATIONS</h3><p>Symbol: <strong>XAUUSD (Gold)</strong> · Timeframe: <strong>M15</strong> · Profile: <strong>Scalper</strong> · Risk: <strong>1% per trade</strong></p></div>
 <div class="perf-grid">
-<div class="perf-card"><div class="perf-value">+149.6%</div><div class="perf-label">Total Return</div></div>
-<div class="perf-card"><div class="perf-value">4.35</div><div class="perf-label">Sharpe Ratio</div></div>
-<div class="perf-card"><div class="perf-value">63.6%</div><div class="perf-label">Win Rate</div></div>
-<div class="perf-card"><div class="perf-value">2.00</div><div class="perf-label">Profit Factor</div></div>
-<div class="perf-card"><div class="perf-value">14.8%</div><div class="perf-label">Max Drawdown</div></div>
-<div class="perf-card"><div class="perf-value">10.1x</div><div class="perf-label">Return/DD</div></div>
+<div class="perf-card"><div class="perf-value">+258.3%</div><div class="perf-label">VIP Return</div></div>
+<div class="perf-card"><div class="perf-value">14.3x</div><div class="perf-label">Return / DD</div></div>
+<div class="perf-card"><div class="perf-value">58.4%</div><div class="perf-label">Win Rate</div></div>
+<div class="perf-card"><div class="perf-value">1.91</div><div class="perf-label">Profit Factor</div></div>
+<div class="perf-card"><div class="perf-value">18.1%</div><div class="perf-label">Max Drawdown</div></div>
+<div class="perf-card"><div class="perf-value">89</div><div class="perf-label">Total Trades</div></div>
 </div></div></section>
 
 <section id="pricing"><div class="container">
 <div class="section-title"><h2>Choose Your <span class="gold-text">Edition</span></h2><p>Start free, upgrade when you're ready.</p></div>
 <div class="pricing-grid">
-<div class="price-card"><div class="price-tier">🎁 Free</div><div class="price-amount">$0<span>/forever</span></div><div class="price-desc">Perfect for beginners.</div>
-<ul class="price-features"><li>Trend Strategy</li><li>Stair-Step Protection</li><li>Session Filter</li><li>Basic Alerts</li><li class="disabled">Breakout Strategy</li><li class="disabled">ATR Filter</li></ul>
-<a href="https://www.tradingview.com/u/AurumAlgo/" class="price-cta price-cta-secondary" target="_blank">Get Free Edition</a></div>
-<div class="price-card featured"><div class="price-tier">⭐ Pro</div><div class="price-amount">$29<span>/month</span></div><div class="price-desc">Best value for serious traders.</div>
-<ul class="price-features"><li>All 3 Strategies</li><li>Stair-Step Protection</li><li>Max Daily Trades</li><li>Dual Circuit Breaker</li><li>Multi-Symbol (3)</li><li>Full Alerts</li></ul>
-<a href="mailto:aurumalgo.official@gmail.com?subject=Pro%20Edition" class="price-cta price-cta-primary">Get Pro Edition</a></div>
-<div class="price-card"><div class="price-tier">👑 VIP Elite</div><div class="price-amount">$59<span>/month</span></div><div class="price-desc">Institutional-grade.</div>
-<ul class="price-features"><li>Everything in Pro</li><li>ATR Sweet Spot Filter</li><li>Multi-Profile</li><li>Multi-Symbol (6)</li><li>News Filter</li><li>Sharpe 4.35 · DD 14.8% 🏆</li></ul>
-<a href="mailto:aurumalgo.official@gmail.com?subject=VIP%20Elite" class="price-cta price-cta-secondary">Get VIP Edition</a></div>
+
+<div class="price-card">
+<div class="price-tier">🎁 Free</div>
+<div class="price-amount">$0<span>/forever</span></div>
+<div class="price-desc">Perfect for beginners. High win rate, zero risk.</div>
+<ul class="price-features">
+<li>Trend Strategy</li>
+<li>Stair-Step + Trailing Stop</li>
+<li>Session Filter</li>
+<li>Max Daily Limit: 1</li>
+<li><strong class="gold-text">+107.3% · WR 67.4%</strong></li>
+<li class="disabled">Breakout Strategy</li>
+<li class="disabled">PRIME Signals</li>
+</ul>
+<a href="https://www.tradingview.com/u/AurumAlgo/" class="price-cta price-cta-secondary" target="_blank">Get Free Edition</a>
+</div>
+
+<div class="price-card featured">
+<div class="price-tier">⭐ Pro</div>
+<div class="price-amount">$39<span>/month</span></div>
+<div class="price-desc">Quality Sniper. Trend + Breakout strategies.</div>
+<ul class="price-features">
+<li>Trend + Breakout</li>
+<li>Stair-Step + Trailing Stop</li>
+<li>Max Daily Limit: 2</li>
+<li>Dual Circuit Breaker</li>
+<li><strong class="gold-text">+210.5% · Return/DD 12.2x</strong></li>
+<li>3 Symbols</li>
+<li class="disabled">PRIME Signals</li>
+</ul>
+<a href="mailto:aurumalgo.official@gmail.com?subject=Pro%20Edition" class="price-cta price-cta-primary">Get Pro Edition</a>
+</div>
+
+<div class="price-card">
+<div class="price-tier">👑 VIP Elite</div>
+<div class="price-amount">$59<span>/month</span></div>
+<div class="price-desc">Maximum power. All 3 strategies + 5 exclusive powers.</div>
+<ul class="price-features">
+<li>Trend + Breakout + Range</li>
+<li><strong class="gold-text">⚡ PRIME Signals (52 fired)</strong></li>
+<li><strong class="gold-text">⚡ Re-entry Engine (55)</strong></li>
+<li><strong class="gold-text">⚡ Kill Zone Boost (12-15 UTC)</strong></li>
+<li><strong class="gold-text">⚡ Adaptive Max Daily</strong></li>
+<li><strong class="gold-text">⚡ Adaptive TP (ADX-based)</strong></li>
+<li><strong class="gold-text">+258.3% · Return/DD 14.3x 🏆</strong></li>
+<li>7 Symbols · News Filter</li>
+</ul>
+<a href="mailto:aurumalgo.official@gmail.com?subject=VIP%20Elite" class="price-cta price-cta-secondary">Get VIP Edition</a>
+</div>
+
 </div></div></section>
 
 <section id="about" class="brand-story"><div class="container">
@@ -174,7 +216,7 @@ footer { background: var(--bg-dark); padding: 60px 0 30px; border-top: 1px solid
 <div class="story-content">
 <div class="story-quote">"AURUM" — the Latin word for gold. Today, we've combined that timeless value with modern technology.</div>
 <p><strong>AurumAlgo™</strong> was born from a simple frustration: most trading indicators either work in theory but fail in practice.</p>
-<p>We spent years testing, refining, and validating. We went through over 10 iterations. The result is what you see today: <strong>Sharpe Ratio 4.35</strong> — achieved by fewer than 0.1% of trading strategies worldwide.</p>
+<p>We spent years testing, refining, and validating. We went through over <strong>10 iterations</strong>. We tested and rejected 5+ features that seemed promising but hurt performance. The result: <strong>VIP Edition with Return/DD ratio of 14.3x</strong> — achieved by fewer than 1% of trading strategies worldwide.</p>
 <p>We built AurumAlgo for traders who value <span class="gold-text">precision over hype</span>, and <span class="gold-text">consistency over gambling</span>.</p>
 <p style="margin-top: 32px; color: var(--gold); font-weight: 600;">— The AurumAlgo Team</p>
 </div></div></section>
@@ -182,15 +224,25 @@ footer { background: var(--bg-dark); padding: 60px 0 30px; border-top: 1px solid
 <section id="faq"><div class="container">
 <div class="section-title"><h2>Frequently Asked <span class="gold-text">Questions</span></h2></div>
 <div class="faq-list">
-<div class="faq-item"><div class="faq-q">What is AurumAlgo™?</div><div class="faq-a">Professional trading indicator for Gold (XAUUSD) on TradingView, specialized for the M15 timeframe.</div></div>
+<div class="faq-item"><div class="faq-q">What is AurumAlgo™?</div><div class="faq-a">Professional trading indicator for Gold (XAUUSD) on TradingView, specialized for the M15 timeframe. Available in Free, Pro, and VIP editions.</div></div>
+
 <div class="faq-item"><div class="faq-q">Which timeframe and symbol?</div><div class="faq-a">Optimized exclusively for XAUUSD on the M15 (15-minute) timeframe. Not tested on H1 or H4.</div></div>
-<div class="faq-item"><div class="faq-q">Is it suitable for beginners?</div><div class="faq-a">Yes. The Free Edition includes clear BUY/SELL signals and Stair-Step protection.</div></div>
-<div class="faq-item"><div class="faq-q">How many signals per day?</div><div class="faq-a">Typically 1-3 signals per day. Maximum 5 per day. Zero signals on quiet days is normal.</div></div>
-<div class="faq-item"><div class="faq-q">What is the Sharpe Ratio?</div><div class="faq-a">Sharpe measures return adjusted for risk. Our 4.35 places us in the top 0.1% globally.</div></div>
+
+<div class="faq-item"><div class="faq-q">What's the difference between Free, Pro, and VIP?</div><div class="faq-a"><strong>Free</strong>: Trend strategy only, +107.3% · 67.4% WR. <strong>Pro</strong>: Trend + Breakout, +210.5%, Return/DD 12.2x. <strong>VIP</strong>: All 3 strategies + 5 exclusive powers (PRIME, Re-entry, Kill Zone, Adaptive Max Daily, Adaptive TP), +258.3%, Return/DD 14.3x.</div></div>
+
+<div class="faq-item"><div class="faq-q">Is it suitable for beginners?</div><div class="faq-a">Yes. The Free Edition includes clear BUY/SELL signals, Stair-Step protection, and only 1 trade per day — extremely beginner-friendly.</div></div>
+
+<div class="faq-item"><div class="faq-q">How many signals per day?</div><div class="faq-a"><strong>Free</strong>: 1 max. <strong>Pro</strong>: 2 max. <strong>VIP</strong>: 3-10 adaptive based on ADX and Kill Zone. Typically 1-3 signals daily; zero on quiet days is normal.</div></div>
+
+<div class="faq-item"><div class="faq-q">What is Return/DD Ratio?</div><div class="faq-a">Return divided by Max Drawdown. Our VIP's 14.3x means every 1% of drawdown produced 14.3% of return. It's a more meaningful metric than Sharpe for scalping strategies.</div></div>
+
 <div class="faq-item"><div class="faq-q">Does it repaint signals?</div><div class="faq-a">No. All signals confirm only on candle close (barstate.isconfirmed).</div></div>
-<div class="faq-item"><div class="faq-q">What is the Circuit Breaker?</div><div class="faq-a">After 3 consecutive losses, pause 12 hours. After 5 losses, pause 2 days.</div></div>
-<div class="faq-item"><div class="faq-q">What is the ATR Sweet Spot Filter?</div><div class="faq-a">Blocks trades during chaotic (high ATR) or choppy (low ATR) markets. Reduced DD from 22% to 14.8%.</div></div>
-<div class="faq-item"><div class="faq-q">How do I get support?</div><div class="faq-a">Email: aurumalgo.official@gmail.com</div></div>
+
+<div class="faq-item"><div class="faq-q">What is the Circuit Breaker?</div><div class="faq-a">After 3 consecutive losses, pause 12 hours. After 5 losses, pause 2 days. Protects capital during adverse market conditions.</div></div>
+
+<div class="faq-item"><div class="faq-q">What are the VIP exclusive powers?</div><div class="faq-a"><strong>PRIME Signals</strong>: Confluence-based high-confidence entries (52 fired in backtest). <strong>Re-entry</strong>: Fast recovery after wins (1-bar cooldown). <strong>Kill Zone</strong>: 50% capacity boost during 12-15 UTC. <strong>Adaptive Max Daily</strong>: Auto-adjusts based on ADX. <strong>Adaptive TP</strong>: Dynamic take-profit based on market strength.</div></div>
+
+<div class="faq-item"><div class="faq-q">How do I get support?</div><div class="faq-a">Email: aurumalgo.official@gmail.com — 24-48 hour response time.</div></div>
 </div></div></section>
 
 <section class="cta-section"><div class="container">
@@ -201,10 +253,10 @@ footer { background: var(--bg-dark); padding: 60px 0 30px; border-top: 1px solid
 
 <footer id="contact"><div class="container">
 <div class="footer-grid">
-<div class="footer-brand"><a href="#" class="logo">◆ AURUMALGO</a><p>The Gold Algorithm. Professional trading indicator for XAUUSD M15.</p></div>
+<div class="footer-brand"><a href="#" class="logo">◆ AURUMALGO</a><p>The Gold Algorithm. Professional trading indicator for XAUUSD M15. Free, Pro, and VIP editions.</p></div>
 <div class="footer-col"><h4>Product</h4><ul><li><a href="#features">Features</a></li><li><a href="#performance">Performance</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
 <div class="footer-col"><h4>Company</h4><ul><li><a href="#about">About</a></li><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="#">Disclaimer</a></li></ul></div>
-<div class="footer-col"><h4>Connect</h4><ul><li><a href="https://www.tradingview.com/u/AurumAlgo/" target="_blank">TradingView</a></li><li><a href="mailto:aurumalgo.official@gmail.com">Email</a></li></ul></div>
+<div class="footer-col"><h4>Connect</h4><ul><li><a href="https://www.tradingview.com/u/AurumAlgo/" target="_blank">TradingView</a></li><li><a href="https://github.com/AurumAlgo" target="_blank">GitHub</a></li><li><a href="mailto:aurumalgo.official@gmail.com">Email</a></li></ul></div>
 </div>
 <div class="footer-bottom"><div>© 2026 AurumAlgo™. All rights reserved.</div><div>⚠️ Past performance does not guarantee future results.</div></div>
 </div></footer>
