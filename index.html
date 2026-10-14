@@ -27,7 +27,6 @@
     min-height: 100vh;
   }
 
-  /* HEADER */
   header {
     padding: 20px 24px;
     display: flex;
@@ -51,10 +50,7 @@
     letter-spacing: 2px;
   }
 
-  .logo-diamond {
-    color: var(--gold);
-    font-size: 22px;
-  }
+  .logo-diamond { color: var(--gold); font-size: 22px; }
 
   .header-cta {
     padding: 10px 20px;
@@ -69,11 +65,8 @@
     transition: all 0.2s;
   }
 
-  .header-cta:hover {
-    background: var(--gold-dark);
-  }
+  .header-cta:hover { background: var(--gold-dark); }
 
-  /* HERO */
   .hero {
     padding: 60px 24px 40px;
     text-align: center;
@@ -97,12 +90,9 @@
     font-weight: 800;
     margin-bottom: 16px;
     line-height: 1.2;
-    color: var(--white);
   }
 
-  .hero h1 .gold {
-    color: var(--gold);
-  }
+  .hero h1 .gold { color: var(--gold); }
 
   .hero p {
     font-size: 18px;
@@ -121,9 +111,7 @@
     margin-top: 32px;
   }
 
-  .stat {
-    text-align: center;
-  }
+  .stat { text-align: center; }
 
   .stat-value {
     font-size: 28px;
@@ -137,7 +125,6 @@
     margin-top: 4px;
   }
 
-  /* PRICING */
   .pricing {
     padding: 40px 24px 60px;
     max-width: 1200px;
@@ -224,6 +211,7 @@
     text-decoration: line-through;
     font-size: 15px;
     margin-bottom: 16px;
+    min-height: 22px;
   }
 
   .card-desc {
@@ -255,9 +243,7 @@
     flex-shrink: 0;
   }
 
-  .card-features li.locked {
-    color: #555;
-  }
+  .card-features li.locked { color: #555; }
 
   .card-features li.locked::before {
     content: "✗";
@@ -281,6 +267,7 @@
     transition: all 0.2s;
     cursor: pointer;
     border: none;
+    margin-bottom: 8px;
   }
 
   .cta-primary {
@@ -288,14 +275,13 @@
     color: var(--black);
   }
 
-  .cta-primary:hover {
-    background: var(--gold-dark);
-  }
+  .cta-primary:hover { background: var(--gold-dark); }
 
   .cta-outline {
     background: transparent;
     color: var(--gold);
     border: 2px solid var(--gold);
+    padding: 12px 20px;
   }
 
   .cta-outline:hover {
@@ -303,13 +289,21 @@
     color: var(--black);
   }
 
-  .cta-locked {
-    background: #2a2a2a;
-    color: #777;
-    cursor: not-allowed;
+  .cta-small {
+    background: transparent;
+    color: #888;
+    border: 1px solid #333;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 0;
   }
 
-  /* PERFORMANCE */
+  .cta-small:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
   .performance {
     padding: 60px 24px;
     max-width: 1000px;
@@ -346,9 +340,7 @@
     color: var(--gold);
   }
 
-  .perf-value.green {
-    color: var(--green);
-  }
+  .perf-value.green { color: var(--green); }
 
   .perf-label {
     font-size: 12px;
@@ -358,7 +350,6 @@
     letter-spacing: 1px;
   }
 
-  /* FOOTER */
   footer {
     padding: 40px 24px;
     border-top: 1px solid var(--border);
@@ -373,13 +364,9 @@
     margin: 0 10px;
   }
 
-  footer a:hover {
-    color: var(--gold-dark);
-  }
+  footer a:hover { color: var(--gold-dark); }
 
-  .footer-links {
-    margin-bottom: 20px;
-  }
+  .footer-links { margin-bottom: 20px; }
 
   .disclaimer {
     max-width: 800px;
@@ -389,7 +376,6 @@
     line-height: 1.6;
   }
 
-  /* RESPONSIVE */
   @media (max-width: 600px) {
     .hero h1 { font-size: 32px; }
     .hero p { font-size: 16px; }
@@ -403,7 +389,6 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo">
     <span class="logo-diamond">◆</span>
@@ -414,7 +399,6 @@
   </a>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-badge">🏆 Tested · Verified · Tracked</div>
   <h1>The <span class="gold">Gold Algorithm</span> for XAUUSD Traders</h1>
@@ -440,7 +424,6 @@
   </div>
 </section>
 
-<!-- PRICING -->
 <section class="pricing">
   <h2 class="pricing-title">Choose Your Edition</h2>
   <p class="pricing-subtitle">Start free. Scale when ready.</p>
@@ -485,8 +468,12 @@
         <li>Max Daily Limit: 4</li>
         <li class="highlight">+221% · 10.8x Return/DD</li>
       </ul>
-      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6"
+      <a href="https://atlos.io/payment/iguyYzgrCDGtOn"
          target="_blank" class="card-cta cta-primary">
+        Buy Now — $19
+      </a>
+      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6"
+         target="_blank" class="card-cta cta-small">
         Join Waitlist
       </a>
     </div>
@@ -508,8 +495,12 @@
         <li>⚡ Adaptive TP (ADX-based)</li>
         <li class="highlight">+259.5% · 14.4x Return/DD</li>
       </ul>
-      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6"
+      <a href="https://atlos.io/payment/4OoFgMR0LuHy9J"
          target="_blank" class="card-cta cta-primary">
+        Buy Now — $39
+      </a>
+      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6"
+         target="_blank" class="card-cta cta-small">
         Join Waitlist
       </a>
     </div>
@@ -529,8 +520,12 @@
         <li>Founder badge</li>
         <li class="highlight">Best long-term value</li>
       </ul>
+      <a href="https://atlos.io/payment/RJfKBZrC9IDBEI"
+         target="_blank" class="card-cta cta-primary">
+        Buy Now — $249
+      </a>
       <a href="https://forms.gle/MRZaEJGgoQStrrgJ6"
-         target="_blank" class="card-cta cta-outline">
+         target="_blank" class="card-cta cta-small">
         Join Waitlist
       </a>
     </div>
@@ -538,7 +533,6 @@
   </div>
 </section>
 
-<!-- PERFORMANCE -->
 <section class="performance">
   <h2>Track Record</h2>
   <p class="performance-sub">Verified backtest results (Balanced preset)</p>
@@ -571,7 +565,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-links">
     <a href="https://github.com/AurumAlgo" target="_blank">GitHub</a>
