@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURUMALGO™ — الگوریتم طلا</title>
+<meta name="description" content="سیستم معاملاتی الگوریتمی طلا (XAUUSD) — نسخه رایگان، Pro و VIP.">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --black: #0a0d14; --gold: #FFD700; --gold-dark: #D4AF37; --white: #FFFFFF; --green: #00e676; --red: #ff1744; --card: #141820; --border: rgba(255, 215, 0, 0.2); }
+  body { font-family: 'Tahoma', -apple-system, system-ui, sans-serif; background: var(--black); color: var(--white); line-height: 1.8; min-height: 100vh; direction: rtl; }
+  header { padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10, 13, 20, 0.95); backdrop-filter: blur(10px); z-index: 100; }
+  .logo { display: flex; align-items: center; gap: 10px; color: var(--gold); font-weight: 700; font-size: 18px; letter-spacing: 2px; }
+  .logo-diamond { color: var(--gold); font-size: 22px; }
+  .header-cta { padding: 10px 20px; background: var(--gold); color: var(--black); border: none; border-radius: 6px; font-weight: 600; font-size: 14px; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+  .header-cta:hover { background: var(--gold-dark); }
+  .hero { padding: 60px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+  .hero-badge { display: inline-block; padding: 6px 16px; background: rgba(255, 215, 0, 0.1); border: 1px solid var(--border); border-radius: 20px; color: var(--gold); font-size: 13px; margin-bottom: 20px; }
+  .hero h1 { font-size: 40px; font-weight: 800; margin-bottom: 16px; line-height: 1.4; }
+  .hero h1 .gold { color: var(--gold); }
+  .hero p { font-size: 17px; color: #999; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .hero-stats { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 32px; }
+  .stat { text-align: center; }
+  .stat-value { font-size: 28px; font-weight: 800; color: var(--gold); }
+  .stat-label { font-size: 13px; color: #777; margin-top: 4px; }
+  .founders-bar { max-width: 800px; margin: 20px auto 0; padding: 16px 24px; background: linear-gradient(90deg, rgba(255,215,0,0.15), rgba(255,215,0,0.05)); border: 1px solid rgba(255,215,0,0.4); border-radius: 12px; text-align: center; }
+  .founders-bar .fb-text { color: var(--gold); font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+  .founders-bar .fb-count { font-size: 13px; color: #ccc; }
+  .founders-bar .fb-progress { width: 100%; height: 6px; background: rgba(0,0,0,0.4); border-radius: 3px; margin-top: 10px; overflow: hidden; }
+  .founders-bar .fb-progress-fill { height: 100%; width: 3%; background: linear-gradient(90deg, var(--gold), var(--gold-dark)); border-radius: 3px; }
+  .social-section { padding: 40px 24px; max-width: 900px; margin: 0 auto; }
+  .social-title { text-align: center; font-size: 24px; font-weight: 700; margin-bottom: 12px; color: var(--gold); }
+  .social-subtitle { text-align: center; color: #888; margin-bottom: 32px; font-size: 15px; }
+  .social-buttons { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; max-width: 700px; margin: 0 auto; }
+  .social-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: var(--white); transition: all 0.3s; }
+  .social-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+  .social-icon { width: 56px; height: 56px; flex-shrink: 0; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+  .icon-tg { background: linear-gradient(135deg, #229ED9 0%, #0088cc 100%); }
+  .icon-ig { background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #FCB045 100%); }
+  .social-text { flex: 1; }
+  .social-name { font-weight: 700; font-size: 15px; margin-bottom: 4px; color: var(--white); }
+  .social-handle { color: var(--gold); font-size: 13px; font-weight: 600; direction: ltr; text-align: right; }
+  .social-arrow { color: var(--gold); font-size: 20px; }
+  .pricing { padding: 40px 24px 60px; max-width: 1200px; margin: 0 auto; }
+  .pricing-title { text-align: center; font-size: 30px; font-weight: 700; margin-bottom: 12px; }
+  .pricing-subtitle { text-align: center; color: #888; margin-bottom: 48px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px 24px; transition: all 0.3s; position: relative; display: flex; flex-direction: column; }
+  .card:hover { transform: translateY(-4px); border-color: var(--gold); }
+  .card.featured { border-color: var(--gold); box-shadow: 0 0 40px rgba(255, 215, 0, 0.15); }
+  .card-tag { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-bottom: 16px; align-self: flex-start; }
+  .tag-free { background: rgba(0, 230, 118, 0.15); color: var(--green); }
+  .tag-pro { background: rgba(255, 215, 0, 0.15); color: var(--gold); }
+  .tag-vip { background: rgba(255, 215, 0, 0.2); color: var(--gold); border: 1px solid var(--gold); }
+  .tag-lifetime { background: rgba(0, 188, 212, 0.15); color: #00bcd4; }
+  .card-name { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+  .card-price-was { color: #666; text-decoration: line-through; font-size: 18px; margin-top: 12px; margin-bottom: 2px; direction: ltr; text-align: right; }
+  .card-price { font-size: 42px; font-weight: 800; color: var(--gold); margin: 0 0 6px; line-height: 1; direction: ltr; text-align: right; }
+  .card-price small { font-size: 15px; color: #888; font-weight: 500; }
+  .card-save { display: inline-block; padding: 4px 12px; background: rgba(0, 230, 118, 0.15); color: var(--green); border: 1px solid rgba(0, 230, 118, 0.4); border-radius: 12px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
+  .card-desc { color: #999; font-size: 14px; margin-bottom: 20px; min-height: 42px; }
+  .card-features { list-style: none; margin-bottom: 24px; flex-grow: 1; }
+  .card-features li { padding: 8px 0; font-size: 14px; color: #ccc; display: flex; align-items: flex-start; gap: 8px; }
+  .card-features li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
+  .card-features li.locked { color: #555; }
+  .card-features li.locked::before { content: "✗"; color: var(--red); }
+  .card-features li.highlight { color: var(--gold); font-weight: 600; }
+  .card-cta { display: block; width: 100%; padding: 14px 20px; border-radius: 8px; font-weight: 700; font-size: 15px; text-align: center; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; margin-bottom: 8px; font-family: inherit; }
+  .cta-primary { background: var(--gold); color: var(--black); }
+  .cta-primary:hover { background: var(--gold-dark); }
+  .cta-outline { background: transparent; color: var(--gold); border: 2px solid var(--gold); padding: 12px 20px; }
+  .cta-outline:hover { background: var(--gold); color: var(--black); }
+  .cta-small { background: transparent; color: #888; border: 1px solid #333; padding: 10px 16px; font-size: 13px; font-weight: 500; margin-bottom: 0; }
+  .cta-small:hover { color: var(--gold); border-color: var(--gold); }
+  .cta-lock { background: rgba(255,215,0,0.08); color: var(--gold); border: 1px solid rgba(255,215,0,0.3); padding: 10px 16px; font-size: 12px; font-weight: 600; margin-top: 4px; margin-bottom: 0; }
+  .cta-lock:hover { background: rgba(255,215,0,0.15); }
+  .performance { padding: 60px 24px; max-width: 1000px; margin: 0 auto; text-align: center; }
+  .performance h2 { font-size: 26px; margin-bottom: 12px; }
+  .performance-sub { color: #888; margin-bottom: 40px; }
+  .perf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; }
+  .perf-item { padding: 20px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
+  .perf-value { font-size: 24px; font-weight: 800; color: var(--gold); direction: ltr; }
+  .perf-value.green { color: var(--green); }
+  .perf-label { font-size: 12px; color: #777; margin-top: 6px; }
+  footer { padding: 40px 24px; border-top: 1px solid var(--border); text-align: center; color: #666; font-size: 13px; }
+  footer a { color: var(--gold); text-decoration: none; margin: 0 10px; }
+  footer a:hover { color: var(--gold-dark); }
+  .footer-links { margin-bottom: 20px; }
+  .disclaimer { max-width: 800px; margin: 20px auto 0; font-size: 11px; color: #444; line-height: 1.8; }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 28px; }
+    .hero p { font-size: 15px; }
+    .hero-stats { gap: 24px; }
+    .stat-value { font-size: 22px; }
+    .pricing-title { font-size: 22px; }
+    .card { padding: 22px 18px; }
+    .card-price { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <span class="logo-diamond">◆</span>
+    <span>AURUMALGO</span>
+  </div>
+  <a href="#social" class="header-cta">عضویت در تلگرام</a>
+</header>
+
+<section class="hero">
+  <div class="hero-badge">🏆 تست‌شده · تأییدشده · رهگیری‌شده</div>
+  <h1>الگوریتم <span class="gold">طلا</span> برای تریدرهای XAUUSD</h1>
+  <p>سیستم Trend + Breakout با خروج پله‌ای. تست‌شده روی ۹۰ معامله با نسبت Return/DD معادل ۱۴.۴x.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-value">+۲۵۹.۵٪</div><div class="stat-label">بازده</div></div>
+    <div class="stat"><div class="stat-value">۱۴.۴x</div><div class="stat-label">Return/DD</div></div>
+    <div class="stat"><div class="stat-value">۵۸.۹٪</div><div class="stat-label">نرخ برد</div></div>
+    <div class="stat"><div class="stat-value">۹۰</div><div class="stat-label">معامله</div></div>
+  </div>
+</section>
+
+<section class="founders-bar">
+  <div class="fb-text">🔥 قیمت Founders — فقط ۱۰۰ مشتری اول</div>
+  <div class="fb-count">۳ / ۱۰۰ رزرو شده · قیمت برای همیشه قفل می‌شود</div>
+  <div class="fb-progress"><div class="fb-progress-fill"></div></div>
+</section>
+
+<section class="social-section" id="social">
+  <h2 class="social-title">به جمع ما بپیوندید</h2>
+  <p class="social-subtitle">سیگنال رایگان · تحلیل روزانه · رکورد عملکرد</p>
+  <div class="social-buttons">
+    <a href="https://t.me/AurumAlgoPersian" target="_blank" class="social-card">
+      <div class="social-icon icon-tg">📱</div>
+      <div class="social-text">
+        <div class="social-name">کانال تلگرام فارسی</div>
+        <div class="social-handle">@AurumAlgoPersian</div>
+      </div>
+      <div class="social-arrow">←</div>
+    </a>
+    <a href="https://instagram.com/aurumalgo.official" target="_blank" class="social-card">
+      <div class="social-icon icon-ig">📸</div>
+      <div class="social-text">
+        <div class="social-name">اینستاگرام</div>
+        <div class="social-handle">@aurumalgo.official</div>
+      </div>
+      <div class="social-arrow">←</div>
+    </a>
+  </div>
+</section>
+
+<section class="pricing">
+  <h2 class="pricing-title">نسخه خود را انتخاب کنید</h2>
+  <p class="pricing-subtitle">قیمت Founders · فقط ۱۰۰ مشتری اول</p>
+  <div class="cards">
+
+    <div class="card">
+      <span class="card-tag tag-free">🎁 رایگان</span>
+      <h3 class="card-name">نسخه رایگان</h3>
+      <div class="card-price-was">&nbsp;</div>
+      <div class="card-price">$0 <small>همیشه</small></div>
+      <div class="card-save">همیشه رایگان</div>
+      <p class="card-desc">مناسب مبتدی‌ها. استراتژی اصلی، بدون ریسک.</p>
+      <ul class="card-features">
+        <li>استراتژی Trend</li>
+        <li>خروج پله‌ای + تریلینگ استاپ</li>
+        <li>فیلتر سشن</li>
+        <li>حداکثر ۳ معامله در روز</li>
+        <li class="highlight">+۱۲۱.۱٪ · ۶۳.۲٪ برد</li>
+        <li class="locked">موتور Breakout</li>
+        <li class="locked">سیگنال‌های PRIME</li>
+      </ul>
+      <a href="https://drive.google.com/uc?export=download&id=1q9dyvYLHDPNU77OJ816otCg5ocliJIcH" target="_blank" class="card-cta cta-outline">دانلود رایگان</a>
+      <a href="https://t.me/AurumAlgoPersian" target="_blank" class="card-cta cta-small">📱 عضویت در تلگرام</a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-pro">⭐ پرو</span>
+      <h3 class="card-name">نسخه Pro</h3>
+      <div class="card-price-was">$79 /ماه</div>
+      <div class="card-price">$29 <small>/ماه</small></div>
+      <div class="card-save">💰 ۶۳٪ تخفیف — Founders</div>
+      <p class="card-desc">موتورهای Trend + Breakout. ورودهای پرکیفیت.</p>
+      <ul class="card-features">
+        <li>همه چیز در نسخه رایگان</li>
+        <li>استراتژی Breakout (TP ۲R)</li>
+        <li>محافظ مدار دو سطحی</li>
+        <li>انتخابگر نماد</li>
+        <li>آمار PF و Payoff</li>
+        <li>حداکثر ۴ معامله در روز</li>
+        <li class="highlight">+۲۲۱٪ · Return/DD ۱۰.۸x</li>
+      </ul>
+      <a href="https://atlos.io/payment/BWFQ4gmWEd9XWt" target="_blank" class="card-cta cta-primary">خرید — $29</a>
+      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6" target="_blank" class="card-cta cta-lock">🔒 قفل قیمت Founders</a>
+    </div>
+
+    <div class="card featured">
+      <span class="card-tag tag-vip">⚡ VIP · قهرمان</span>
+      <h3 class="card-name">نسخه VIP</h3>
+      <div class="card-price-was">$149 /ماه</div>
+      <div class="card-price">$59 <small>/ماه</small></div>
+      <div class="card-save">💰 ۶۰٪ تخفیف — Founders</div>
+      <p class="card-desc">هر ۳ موتور + ۵ قدرت انحصاری. بهترین در خانواده.</p>
+      <ul class="card-features">
+        <li>همه چیز در Pro</li>
+        <li>موتور Mean Reversion</li>
+        <li>⚡ PRIME Boost (TP ×۱.۵)</li>
+        <li>⚡ Re-entry سریع</li>
+        <li>⚡ Kill Zone Boost (+۵۰٪)</li>
+        <li>⚡ Adaptive Max Daily (تا ۱۲)</li>
+        <li>⚡ Adaptive TP (بر اساس ADX)</li>
+        <li class="highlight">+۲۵۹.۵٪ · Return/DD ۱۴.۴x</li>
+      </ul>
+      <a href="https://atlos.io/payment/Ol2GaujCB9eEHo" target="_blank" class="card-cta cta-primary">خرید — $59</a>
+      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6" target="_blank" class="card-cta cta-lock">🔒 قفل قیمت Founders</a>
+    </div>
+
+    <div class="card">
+      <span class="card-tag tag-lifetime">💎 مادام‌العمر</span>
+      <h3 class="card-name">دسترسی Lifetime</h3>
+      <div class="card-price-was">$899 یک‌بار</div>
+      <div class="card-price">$399 <small>یک‌بار</small></div>
+      <div class="card-save">💰 ۵۶٪ تخفیف — Founders</div>
+      <p class="card-desc">همه ویژگی‌های VIP. یک‌بار پرداخت، برای همیشه.</p>
+      <ul class="card-features">
+        <li>همه چیز در VIP</li>
+        <li>دسترسی مادام‌العمر</li>
+        <li>همه آپدیت‌های آینده</li>
+        <li>پشتیبانی اولویت‌دار</li>
+        <li>نشان Founder</li>
+        <li class="highlight">بهترین ارزش بلندمدت</li>
+      </ul>
+      <a href="https://atlos.io/payment/WAk6IqyBaaNhX9" target="_blank" class="card-cta cta-primary">خرید — $399</a>
+      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6" target="_blank" class="card-cta cta-lock">🔒 قفل قیمت Founders</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="performance">
+  <h2>رکورد عملکرد</h2>
+  <p class="performance-sub">نتایج بک‌تست تأییدشده (Preset Balanced)</p>
+  <div class="perf-grid">
+    <div class="perf-item"><div class="perf-value green">+۲۵۹.۵٪</div><div class="perf-label">بازده</div></div>
+    <div class="perf-item"><div class="perf-value">۱۴.۴x</div><div class="perf-label">Return/DD</div></div>
+    <div class="perf-item"><div class="perf-value">۵۸.۹٪</div><div class="perf-label">نرخ برد</div></div>
+    <div class="perf-item"><div class="perf-value">۱.۹۱</div><div class="perf-label">فاکتور سود</div></div>
+    <div class="perf-item"><div class="perf-value">۱۸.۱٪</div><div class="perf-label">حداکثر افت</div></div>
+    <div class="perf-item"><div class="perf-value">۹۰</div><div class="perf-label">کل معاملات
