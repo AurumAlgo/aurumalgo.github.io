@@ -48,39 +48,51 @@
   .stat-value { font-size: 28px; font-weight: 800; color: var(--gold); }
   .stat-label { font-size: 13px; color: #777; margin-top: 4px; }
 
-  /* TELEGRAM SECTION */
-  .telegram-section {
-    padding: 40px 24px; max-width: 900px; margin: 0 auto;
+  /* FOUNDERS BAR */
+  .founders-bar {
+    max-width: 800px; margin: 20px auto 0; padding: 16px 24px;
+    background: linear-gradient(90deg, rgba(255,215,0,0.15), rgba(255,215,0,0.05));
+    border: 1px solid rgba(255,215,0,0.4); border-radius: 12px;
+    text-align: center;
   }
-  .telegram-title {
-    text-align: center; font-size: 24px; font-weight: 700;
-    margin-bottom: 12px; color: var(--gold);
+  .founders-bar .fb-text {
+    color: var(--gold); font-weight: 700; font-size: 15px; margin-bottom: 8px;
   }
-  .telegram-subtitle {
-    text-align: center; color: #888; margin-bottom: 32px; font-size: 15px;
+  .founders-bar .fb-count {
+    font-size: 13px; color: #ccc;
   }
-  .telegram-buttons {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
+  .founders-bar .fb-progress {
+    width: 100%; height: 6px; background: rgba(0,0,0,0.4);
+    border-radius: 3px; margin-top: 10px; overflow: hidden;
   }
-  .tg-card {
+  .founders-bar .fb-progress-fill {
+    height: 100%; width: 3%; background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+    border-radius: 3px;
+  }
+
+  /* SOCIAL SECTION */
+  .social-section { padding: 40px 24px; max-width: 900px; margin: 0 auto; }
+  .social-title { text-align: center; font-size: 24px; font-weight: 700; margin-bottom: 12px; color: var(--gold); }
+  .social-subtitle { text-align: center; color: #888; margin-bottom: 32px; font-size: 15px; }
+  .social-buttons { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .social-card {
     background: var(--card); border: 1px solid var(--border);
-    border-radius: 16px; padding: 24px;
+    border-radius: 16px; padding: 22px;
     display: flex; align-items: center; gap: 16px;
-    text-decoration: none; color: var(--white);
-    transition: all 0.3s;
+    text-decoration: none; color: var(--white); transition: all 0.3s;
   }
-  .tg-card:hover { transform: translateY(-4px); border-color: var(--gold); }
-  .tg-icon {
+  .social-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+  .social-icon {
     width: 56px; height: 56px; flex-shrink: 0;
-    background: linear-gradient(135deg, #229ED9 0%, #0088cc 100%);
     border-radius: 14px; display: flex; align-items: center; justify-content: center;
     font-size: 28px;
   }
-  .tg-text { flex: 1; }
-  .tg-name { font-weight: 700; font-size: 16px; margin-bottom: 4px; color: var(--white); }
-  .tg-handle { color: var(--gold); font-size: 13px; font-weight: 600; }
-  .tg-arrow { color: var(--gold); font-size: 20px; }
+  .icon-tg { background: linear-gradient(135deg, #229ED9 0%, #0088cc 100%); }
+  .icon-ig { background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #FCB045 100%); }
+  .social-text { flex: 1; }
+  .social-name { font-weight: 700; font-size: 15px; margin-bottom: 4px; color: var(--white); }
+  .social-handle { color: var(--gold); font-size: 13px; font-weight: 600; }
+  .social-arrow { color: var(--gold); font-size: 20px; }
 
   /* PRICING */
   .pricing { padding: 40px 24px 60px; max-width: 1200px; margin: 0 auto; }
@@ -103,9 +115,17 @@
   .tag-vip { background: rgba(255, 215, 0, 0.2); color: var(--gold); border: 1px solid var(--gold); }
   .tag-lifetime { background: rgba(0, 188, 212, 0.15); color: #00bcd4; }
   .card-name { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-  .card-price { font-size: 36px; font-weight: 800; color: var(--gold); margin: 12px 0 4px; line-height: 1; }
-  .card-price small { font-size: 14px; color: #666; font-weight: 400; }
-  .card-price-was { color: #555; text-decoration: line-through; font-size: 15px; margin-bottom: 16px; min-height: 22px; }
+  .card-price-was {
+    color: #666; text-decoration: line-through; font-size: 18px;
+    margin-top: 12px; margin-bottom: 2px;
+  }
+  .card-price { font-size: 42px; font-weight: 800; color: var(--gold); margin: 0 0 6px; line-height: 1; }
+  .card-price small { font-size: 15px; color: #888; font-weight: 500; }
+  .card-save {
+    display: inline-block; padding: 4px 12px; background: rgba(0, 230, 118, 0.15);
+    color: var(--green); border: 1px solid rgba(0, 230, 118, 0.4);
+    border-radius: 12px; font-size: 12px; font-weight: 700; margin-bottom: 16px;
+  }
   .card-desc { color: #999; font-size: 14px; margin-bottom: 20px; min-height: 42px; }
   .card-features { list-style: none; margin-bottom: 24px; flex-grow: 1; }
   .card-features li { padding: 8px 0; font-size: 14px; color: #ccc; display: flex; align-items: flex-start; gap: 8px; }
@@ -127,11 +147,12 @@
     padding: 10px 16px; font-size: 13px; font-weight: 500; margin-bottom: 0;
   }
   .cta-small:hover { color: var(--gold); border-color: var(--gold); }
-  .cta-telegram {
-    background: linear-gradient(135deg, #229ED9 0%, #0088cc 100%);
-    color: white; border: none; margin-top: 8px; margin-bottom: 0;
+  .cta-lock {
+    background: rgba(255,215,0,0.08); color: var(--gold); border: 1px solid rgba(255,215,0,0.3);
+    padding: 10px 16px; font-size: 12px; font-weight: 600;
+    margin-top: 4px; margin-bottom: 0;
   }
-  .cta-telegram:hover { opacity: 0.9; }
+  .cta-lock:hover { background: rgba(255,215,0,0.15); }
 
   /* PERFORMANCE */
   .performance { padding: 60px 24px; max-width: 1000px; margin: 0 auto; text-align: center; }
@@ -157,7 +178,7 @@
     .stat-value { font-size: 22px; }
     .pricing-title { font-size: 24px; }
     .card { padding: 22px 18px; }
-    .card-price { font-size: 30px; }
+    .card-price { font-size: 34px; }
   }
 </style>
 </head>
@@ -168,7 +189,7 @@
     <span class="logo-diamond">◆</span>
     <span>AURUMALGO</span>
   </div>
-  <a href="#telegram" class="header-cta">Join Telegram</a>
+  <a href="#social" class="header-cta">Join Community</a>
 </header>
 
 <section class="hero">
@@ -183,40 +204,56 @@
   </div>
 </section>
 
-<!-- TELEGRAM SECTION -->
-<section class="telegram-section" id="telegram">
-  <h2 class="telegram-title">Join Our Telegram</h2>
-  <p class="telegram-subtitle">Free signals · Daily analysis · Track record</p>
-  <div class="telegram-buttons">
-    <a href="https://t.me/AurumAlgoOfficial" target="_blank" class="tg-card">
-      <div class="tg-icon">📱</div>
-      <div class="tg-text">
-        <div class="tg-name">English Channel</div>
-        <div class="tg-handle">@AurumAlgoOfficial</div>
+<!-- FOUNDERS BAR -->
+<section class="founders-bar">
+  <div class="fb-text">🔥 FOUNDERS PRICING — First 100 Customers Only</div>
+  <div class="fb-count">3 / 100 claimed · Locked forever for early adopters</div>
+  <div class="fb-progress"><div class="fb-progress-fill"></div></div>
+</section>
+
+<!-- SOCIAL SECTION -->
+<section class="social-section" id="social">
+  <h2 class="social-title">Join Our Community</h2>
+  <p class="social-subtitle">Free signals · Daily analysis · Track record</p>
+  <div class="social-buttons">
+    <a href="https://t.me/AurumAlgoOfficial" target="_blank" class="social-card">
+      <div class="social-icon icon-tg">📱</div>
+      <div class="social-text">
+        <div class="social-name">Telegram — English</div>
+        <div class="social-handle">@AurumAlgoOfficial</div>
       </div>
-      <div class="tg-arrow">→</div>
+      <div class="social-arrow">→</div>
     </a>
-    <a href="https://t.me/AurumAlgoPersian" target="_blank" class="tg-card">
-      <div class="tg-icon">📱</div>
-      <div class="tg-text">
-        <div class="tg-name">کانال فارسی</div>
-        <div class="tg-handle">@AurumAlgoPersian</div>
+    <a href="https://t.me/AurumAlgoPersian" target="_blank" class="social-card">
+      <div class="social-icon icon-tg">📱</div>
+      <div class="social-text">
+        <div class="social-name">Telegram — کانال فارسی</div>
+        <div class="social-handle">@AurumAlgoPersian</div>
       </div>
-      <div class="tg-arrow">→</div>
+      <div class="social-arrow">→</div>
+    </a>
+    <a href="https://instagram.com/aurumalgo.official" target="_blank" class="social-card">
+      <div class="social-icon icon-ig">📸</div>
+      <div class="social-text">
+        <div class="social-name">Instagram</div>
+        <div class="social-handle">@aurumalgo.official</div>
+      </div>
+      <div class="social-arrow">→</div>
     </a>
   </div>
 </section>
 
 <section class="pricing">
   <h2 class="pricing-title">Choose Your Edition</h2>
-  <p class="pricing-subtitle">Start free. Scale when ready.</p>
+  <p class="pricing-subtitle">Founders pricing · First 100 customers only</p>
   <div class="cards">
 
     <div class="card">
       <span class="card-tag tag-free">🎁 FREE</span>
       <h3 class="card-name">Free Edition</h3>
-      <div class="card-price">$0 <small>forever</small></div>
       <div class="card-price-was">&nbsp;</div>
+      <div class="card-price">$0 <small>forever</small></div>
+      <div class="card-save">Always Free</div>
       <p class="card-desc">Perfect for beginners. Core strategy, zero risk.</p>
       <ul class="card-features">
         <li>Trend Strategy</li>
@@ -228,14 +265,15 @@
         <li class="locked">PRIME Signals</li>
       </ul>
       <a href="https://drive.google.com/uc?export=download&id=1q9dyvYLHDPNU77OJ816otCg5ocliJIcH" target="_blank" class="card-cta cta-outline">Download Free</a>
-      <a href="https://t.me/AurumAlgoOfficial" target="_blank" class="card-cta cta-telegram">📱 Join Telegram</a>
+      <a href="https://t.me/AurumAlgoOfficial" target="_blank" class="card-cta cta-small">📱 Join Telegram</a>
     </div>
 
     <div class="card">
       <span class="card-tag tag-pro">⭐ PRO</span>
       <h3 class="card-name">Pro Edition</h3>
-      <div class="card-price">$19 <small>/mo</small></div>
-      <div class="card-price-was">was $29</div>
+      <div class="card-price-was">$79 /mo</div>
+      <div class="card-price">$29 <small>/mo</small></div>
+      <div class="card-save">💰 Save 63% — Founders</div>
       <p class="card-desc">Trend + Breakout engines. High R:R entries.</p>
       <ul class="card-features">
         <li>Everything in Free</li>
@@ -246,15 +284,16 @@
         <li>Max Daily Limit: 4</li>
         <li class="highlight">+221% · 10.8x Return/DD</li>
       </ul>
-      <a href="https://atlos.io/payment/iguyYzgrCDGtOn" target="_blank" class="card-cta cta-primary">Buy Now — $19</a>
-      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6" target="_blank" class="card-cta cta-small">Join Waitlist</a>
+      <a href="https://atlos.io/payment/iguyYzgrCDGtOn" target="_blank" class="card-cta cta-primary">Buy Now — $29</a>
+      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6" target="_blank" class="card-cta cta-lock">🔒 Lock In Founders Price</a>
     </div>
 
     <div class="card featured">
       <span class="card-tag tag-vip">⚡ VIP · CHAMPION</span>
       <h3 class="card-name">VIP Edition</h3>
-      <div class="card-price">$39 <small>/mo</small></div>
-      <div class="card-price-was">was $59</div>
+      <div class="card-price-was">$149 /mo</div>
+      <div class="card-price">$59 <small>/mo</small></div>
+      <div class="card-save">💰 Save 60% — Founders</div>
       <p class="card-desc">All 3 engines + 5 proprietary powers. Best in family.</p>
       <ul class="card-features">
         <li>Everything in Pro</li>
@@ -266,15 +305,16 @@
         <li>⚡ Adaptive TP (ADX-based)</li>
         <li class="highlight">+259.5% · 14.4x Return/DD</li>
       </ul>
-      <a href="https://atlos.io/payment/4OoFgMR0LuHy9J" target="_blank" class="card-cta cta-primary">Buy Now — $39</a>
-      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6" target="_blank" class="card-cta cta-small">Join Waitlist</a>
+      <a href="https://atlos.io/payment/4OoFgMR0LuHy9J" target="_blank" class="card-cta cta-primary">Buy Now — $59</a>
+      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6" target="_blank" class="card-cta cta-lock">🔒 Lock In Founders Price</a>
     </div>
 
     <div class="card">
       <span class="card-tag tag-lifetime">💎 LIFETIME</span>
       <h3 class="card-name">Lifetime Access</h3>
-      <div class="card-price">$249 <small>once</small></div>
-      <div class="card-price-was">was $499</div>
+      <div class="card-price-was">$899 once</div>
+      <div class="card-price">$399 <small>once</small></div>
+      <div class="card-save">💰 Save 56% — Founders</div>
       <p class="card-desc">All VIP features. Pay once, use forever.</p>
       <ul class="card-features">
         <li>Everything in VIP</li>
@@ -284,8 +324,8 @@
         <li>Founder badge</li>
         <li class="highlight">Best long-term value</li>
       </ul>
-      <a href="https://atlos.io/payment/RJfKBZrC9IDBEI" target="_blank" class="card-cta cta-primary">Buy Now — $249</a>
-      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6" target="_blank" class="card-cta cta-small">Join Waitlist</a>
+      <a href="https://atlos.io/payment/RJfKBZrC9IDBEI" target="_blank" class="card-cta cta-primary">Buy Now — $399</a>
+      <a href="https://forms.gle/MRZaEJGgoQStrrgJ6" target="_blank" class="card-cta cta-lock">🔒 Lock In Founders Price</a>
     </div>
 
   </div>
@@ -309,6 +349,7 @@
     <a href="https://github.com/AurumAlgo" target="_blank">GitHub</a>
     <a href="https://t.me/AurumAlgoOfficial" target="_blank">Telegram EN</a>
     <a href="https://t.me/AurumAlgoPersian" target="_blank">Telegram FA</a>
+    <a href="https://instagram.com/aurumalgo.official" target="_blank">Instagram</a>
     <a href="https://tradingview.com/u/AurumAlgo" target="_blank">TradingView</a>
     <a href="mailto:aurumalgo.official@gmail.com">Email</a>
   </div>
