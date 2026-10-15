@@ -6,107 +6,99 @@
 <title>AURUMALGO™ — The Gold Algorithm</title>
 <meta name="description" content="Algorithmic trading systems for Gold (XAUUSD). Free, Pro, and VIP editions with tested performance.">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root { --black: #0a0d14; --gold: #FFD700; --gold-dark: #D4AF37; --white: #FFFFFF; --green: #00e676; --red: #ff1744; --card: #141820; --border: rgba(255, 215, 0, 0.2); }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--black); color: var(--white); line-height: 1.6; min-height: 100vh; }
-  header { padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10, 13, 20, 0.95); backdrop-filter: blur(10px); z-index: 100; }
-  .logo { display: flex; align-items: center; gap: 10px; color: var(--gold); font-weight: 700; font-size: 18px; letter-spacing: 2px; }
-  .logo-diamond { color: var(--gold); font-size: 22px; }
-  .header-cta { padding: 10px 20px; background: var(--gold); color: var(--black); border: none; border-radius: 6px; font-weight: 600; font-size: 14px; cursor: pointer; text-decoration: none; transition: all 0.2s; }
-  .header-cta:hover { background: var(--gold-dark); }
-  .hero { padding: 60px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
-  .hero-badge { display: inline-block; padding: 6px 16px; background: rgba(255, 215, 0, 0.1); border: 1px solid var(--border); border-radius: 20px; color: var(--gold); font-size: 13px; margin-bottom: 20px; }
-  .hero h1 { font-size: 42px; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
-  .hero h1 .gold { color: var(--gold); }
-  .hero p { font-size: 18px; color: #999; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .hero-stats { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 32px; }
-  .stat { text-align: center; }
-  .stat-value { font-size: 28px; font-weight: 800; color: var(--gold); }
-  .stat-label { font-size: 13px; color: #777; margin-top: 4px; }
-  .founders-bar { max-width: 800px; margin: 20px auto 0; padding: 16px 24px; background: linear-gradient(90deg, rgba(255,215,0,0.15), rgba(255,215,0,0.05)); border: 1px solid rgba(255,215,0,0.4); border-radius: 12px; text-align: center; }
-  .founders-bar .fb-text { color: var(--gold); font-weight: 700; font-size: 15px; margin-bottom: 8px; }
-  .founders-bar .fb-count { font-size: 13px; color: #ccc; }
-  .founders-bar .fb-progress { width: 100%; height: 6px; background: rgba(0,0,0,0.4); border-radius: 3px; margin-top: 10px; overflow: hidden; }
-  .founders-bar .fb-progress-fill { height: 100%; width: 3%; background: linear-gradient(90deg, var(--gold), var(--gold-dark)); border-radius: 3px; }
-  .social-section { padding: 40px 24px; max-width: 900px; margin: 0 auto; }
-  .social-title { text-align: center; font-size: 24px; font-weight: 700; margin-bottom: 12px; color: var(--gold); }
-  .social-subtitle { text-align: center; color: #888; margin-bottom: 32px; font-size: 15px; }
-  .social-buttons { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; max-width: 500px; margin: 0 auto; }
-  .social-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 22px; display: flex; align-items: center; gap: 16px; text-decoration: none; color: var(--white); transition: all 0.3s; }
-  .social-card:hover { transform: translateY(-4px); border-color: var(--gold); }
-  .social-icon { width: 56px; height: 56px; flex-shrink: 0; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
-  .icon-tg { background: linear-gradient(135deg, #229ED9 0%, #0088cc 100%); }
-  .icon-tw { background: #000; border: 1px solid #333; }
-  .icon-rd { background: linear-gradient(135deg, #FF4500, #FF5700); }
-  .social-text { flex: 1; }
-  .social-name { font-weight: 700; font-size: 15px; margin-bottom: 4px; color: var(--white); }
-  .social-handle { color: var(--gold); font-size: 13px; font-weight: 600; }
-  .social-arrow { color: var(--gold); font-size: 20px; }
-  .pricing { padding: 40px 24px 60px; max-width: 1200px; margin: 0 auto; }
-  .pricing-title { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 12px; }
-  .pricing-subtitle { text-align: center; color: #888; margin-bottom: 48px; }
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px 24px; transition: all 0.3s; position: relative; display: flex; flex-direction: column; }
-  .card:hover { transform: translateY(-4px); border-color: var(--gold); }
-  .card.featured { border-color: var(--gold); box-shadow: 0 0 40px rgba(255, 215, 0, 0.15); }
-  .card-tag { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; margin-bottom: 16px; align-self: flex-start; }
-  .tag-free { background: rgba(0, 230, 118, 0.15); color: var(--green); }
-  .tag-pro { background: rgba(255, 215, 0, 0.15); color: var(--gold); }
-  .tag-vip { background: rgba(255, 215, 0, 0.2); color: var(--gold); border: 1px solid var(--gold); }
-  .tag-lifetime { background: rgba(0, 188, 212, 0.15); color: #00bcd4; }
-  .card-name { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-  .card-price-was { color: #666; text-decoration: line-through; font-size: 18px; margin-top: 12px; margin-bottom: 2px; }
-  .card-price { font-size: 42px; font-weight: 800; color: var(--gold); margin: 0 0 6px; line-height: 1; }
-  .card-price small { font-size: 15px; color: #888; font-weight: 500; }
-  .card-save { display: inline-block; padding: 4px 12px; background: rgba(0, 230, 118, 0.15); color: var(--green); border: 1px solid rgba(0, 230, 118, 0.4); border-radius: 12px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
-  .card-desc { color: #999; font-size: 14px; margin-bottom: 20px; min-height: 42px; }
-  .card-features { list-style: none; margin-bottom: 24px; flex-grow: 1; }
-  .card-features li { padding: 8px 0; font-size: 14px; color: #ccc; display: flex; align-items: flex-start; gap: 8px; }
-  .card-features li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
-  .card-features li.locked { color: #555; }
-  .card-features li.locked::before { content: "✗"; color: var(--red); }
-  .card-features li.highlight { color: var(--gold); font-weight: 600; }
-  .card-cta { display: block; width: 100%; padding: 14px 20px; border-radius: 8px; font-weight: 700; font-size: 15px; text-align: center; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; margin-bottom: 8px; }
-  .cta-primary { background: var(--gold); color: var(--black); }
-  .cta-primary:hover { background: var(--gold-dark); }
-  .cta-outline { background: transparent; color: var(--gold); border: 2px solid var(--gold); padding: 12px 20px; }
-  .cta-outline:hover { background: var(--gold); color: var(--black); }
-  .cta-small { background: transparent; color: #888; border: 1px solid #333; padding: 10px 16px; font-size: 13px; font-weight: 500; margin-bottom: 0; }
-  .cta-small:hover { color: var(--gold); border-color: var(--gold); }
-  .cta-lock { background: rgba(255,215,0,0.08); color: var(--gold); border: 1px solid rgba(255,215,0,0.3); padding: 10px 16px; font-size: 12px; font-weight: 600; margin-top: 4px; margin-bottom: 0; }
-  .cta-lock:hover { background: rgba(255,215,0,0.15); }
-  .performance { padding: 60px 24px; max-width: 1000px; margin: 0 auto; text-align: center; }
-  .performance h2 { font-size: 28px; margin-bottom: 12px; }
-  .performance-sub { color: #888; margin-bottom: 40px; }
-  .perf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; }
-  .perf-item { padding: 20px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; }
-  .perf-value { font-size: 24px; font-weight: 800; color: var(--gold); }
-  .perf-value.green { color: var(--green); }
-  .perf-label { font-size: 12px; color: #777; margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
-  footer { padding: 40px 24px; border-top: 1px solid var(--border); text-align: center; color: #666; font-size: 13px; }
-  footer a { color: var(--gold); text-decoration: none; margin: 0 10px; }
-  footer a:hover { color: var(--gold-dark); }
-  .footer-links { margin-bottom: 20px; }
-  .disclaimer { max-width: 800px; margin: 20px auto 0; font-size: 11px; color: #444; line-height: 1.6; }
-  @media (max-width: 600px) {
-    .hero h1 { font-size: 32px; }
-    .hero p { font-size: 16px; }
-    .hero-stats { gap: 24px; }
-    .stat-value { font-size: 22px; }
-    .pricing-title { font-size: 24px; }
-    .card { padding: 22px 18px; }
-    .card-price { font-size: 34px; }
-  }
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#0a0d14;--gold:#FFD700;--gold-dark:#D4AF37;--white:#FFFFFF;--green:#00e676;--red:#ff1744;--card:#141820;--border:rgba(255,215,0,0.2)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--black);color:var(--white);line-height:1.6;min-height:100vh}
+header{padding:16px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,13,20,0.95);backdrop-filter:blur(10px);z-index:100}
+.logo{display:flex;align-items:center;gap:10px;color:var(--gold);font-weight:700;font-size:18px;letter-spacing:2px}
+.logo-diamond{color:var(--gold);font-size:22px}
+.header-right{display:flex;align-items:center;gap:12px}
+.lang-switch{color:#666;text-decoration:none;font-size:13px;font-weight:600;padding:6px 12px;border:1px solid #333;border-radius:6px;transition:0.2s}
+.lang-switch:hover{color:var(--gold);border-color:var(--gold)}
+.header-cta{padding:10px 20px;background:var(--gold);color:var(--black);border:none;border-radius:6px;font-weight:600;font-size:14px;cursor:pointer;text-decoration:none;transition:0.2s}
+.header-cta:hover{background:var(--gold-dark)}
+.hero{padding:60px 24px 40px;text-align:center;max-width:800px;margin:0 auto}
+.hero-badge{display:inline-block;padding:6px 16px;background:rgba(255,215,0,0.1);border:1px solid var(--border);border-radius:20px;color:var(--gold);font-size:13px;margin-bottom:20px}
+.hero h1{font-size:42px;font-weight:800;margin-bottom:16px;line-height:1.2}
+.hero h1 .gold{color:var(--gold)}
+.hero p{font-size:18px;color:#999;margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto}
+.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:32px}
+.stat{text-align:center}
+.stat-value{font-size:28px;font-weight:800;color:var(--gold)}
+.stat-label{font-size:13px;color:#777;margin-top:4px}
+.founders-bar{max-width:800px;margin:20px auto 0;padding:16px 24px;background:linear-gradient(90deg,rgba(255,215,0,0.15),rgba(255,215,0,0.05));border:1px solid rgba(255,215,0,0.4);border-radius:12px;text-align:center}
+.fb-text{color:var(--gold);font-weight:700;font-size:15px;margin-bottom:8px}
+.fb-count{font-size:13px;color:#ccc}
+.fb-progress{width:100%;height:6px;background:rgba(0,0,0,0.4);border-radius:3px;margin-top:10px;overflow:hidden}
+.fb-progress-fill{height:100%;width:3%;background:linear-gradient(90deg,var(--gold),var(--gold-dark));border-radius:3px}
+.social-section{padding:40px 24px;max-width:900px;margin:0 auto}
+.social-title{text-align:center;font-size:24px;font-weight:700;margin-bottom:12px;color:var(--gold)}
+.social-subtitle{text-align:center;color:#888;margin-bottom:32px;font-size:15px}
+.social-buttons{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;max-width:500px;margin:0 auto}
+.social-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;display:flex;align-items:center;gap:16px;text-decoration:none;color:var(--white);transition:0.3s}
+.social-card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.social-icon{width:56px;height:56px;flex-shrink:0;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;background:linear-gradient(135deg,#229ED9 0%,#0088cc 100%)}
+.social-text{flex:1}
+.social-name{font-weight:700;font-size:15px;margin-bottom:4px}
+.social-handle{color:var(--gold);font-size:13px;font-weight:600}
+.social-arrow{color:var(--gold);font-size:20px}
+.pricing{padding:40px 24px 60px;max-width:1200px;margin:0 auto}
+.pricing-title{text-align:center;font-size:32px;font-weight:700;margin-bottom:12px}
+.pricing-subtitle{text-align:center;color:#888;margin-bottom:48px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;transition:0.3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.card.featured{border-color:var(--gold);box-shadow:0 0 40px rgba(255,215,0,0.15)}
+.card-tag{display:inline-block;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:600;margin-bottom:16px;align-self:flex-start}
+.tag-free{background:rgba(0,230,118,0.15);color:var(--green)}
+.tag-pro{background:rgba(255,215,0,0.15);color:var(--gold)}
+.tag-vip{background:rgba(255,215,0,0.2);color:var(--gold);border:1px solid var(--gold)}
+.tag-lifetime{background:rgba(0,188,212,0.15);color:#00bcd4}
+.card-name{font-size:22px;font-weight:700;margin-bottom:8px}
+.card-price-was{color:#666;text-decoration:line-through;font-size:18px;margin-top:12px;margin-bottom:2px}
+.card-price{font-size:42px;font-weight:800;color:var(--gold);margin:0 0 6px;line-height:1}
+.card-price small{font-size:15px;color:#888;font-weight:500}
+.card-save{display:inline-block;padding:4px 12px;background:rgba(0,230,118,0.15);color:var(--green);border:1px solid rgba(0,230,118,0.4);border-radius:12px;font-size:12px;font-weight:700;margin-bottom:16px}
+.card-desc{color:#999;font-size:14px;margin-bottom:20px;min-height:42px}
+.card-features{list-style:none;margin-bottom:24px;flex-grow:1}
+.card-features li{padding:8px 0;font-size:14px;color:#ccc;display:flex;align-items:flex-start;gap:8px}
+.card-features li::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0}
+.card-features li.locked{color:#555}
+.card-features li.locked::before{content:"✗";color:var(--red)}
+.card-features li.highlight{color:var(--gold);font-weight:600}
+.card-cta{display:block;width:100%;padding:14px 20px;border-radius:8px;font-weight:700;font-size:15px;text-align:center;text-decoration:none;transition:0.2s;cursor:pointer;border:none;margin-bottom:8px;font-family:inherit}
+.cta-primary{background:var(--gold);color:var(--black)}
+.cta-primary:hover{background:var(--gold-dark)}
+.cta-outline{background:transparent;color:var(--gold);border:2px solid var(--gold);padding:12px 20px}
+.cta-outline:hover{background:var(--gold);color:var(--black)}
+.cta-small{background:transparent;color:#888;border:1px solid #333;padding:10px 16px;font-size:13px;font-weight:500;margin-bottom:0}
+.cta-small:hover{color:var(--gold);border-color:var(--gold)}
+.cta-lock{background:rgba(255,215,0,0.08);color:var(--gold);border:1px solid rgba(255,215,0,0.3);padding:10px 16px;font-size:12px;font-weight:600;margin-top:4px;margin-bottom:0}
+.cta-lock:hover{background:rgba(255,215,0,0.15)}
+.performance{padding:60px 24px;max-width:1000px;margin:0 auto;text-align:center}
+.performance h2{font-size:28px;margin-bottom:12px}
+.performance-sub{color:#888;margin-bottom:40px}
+.perf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px}
+.perf-item{padding:20px;background:var(--card);border:1px solid var(--border);border-radius:12px}
+.perf-value{font-size:24px;font-weight:800;color:var(--gold)}
+.perf-value.green{color:var(--green)}
+.perf-label{font-size:12px;color:#777;margin-top:6px;text-transform:uppercase;letter-spacing:1px}
+footer{padding:40px 24px;border-top:1px solid var(--border);text-align:center;color:#666;font-size:13px}
+footer a{color:var(--gold);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--gold-dark)}
+.footer-links{margin-bottom:20px}
+.disclaimer{max-width:800px;margin:20px auto 0;font-size:11px;color:#444;line-height:1.6}
+@media(max-width:600px){.hero h1{font-size:32px}.hero p{font-size:16px}.hero-stats{gap:24px}.stat-value{font-size:22px}.pricing-title{font-size:24px}.card{padding:22px 18px}.card-price{font-size:34px}}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">
-    <span class="logo-diamond">◆</span>
-    <span>AURUMALGO</span>
+  <div class="logo"><span class="logo-diamond">◆</span><span>AURUMALGO</span></div>
+  <div class="header-right">
+    <a href="fa.html" class="lang-switch">FA</a>
+    <a href="#social" class="header-cta">Join Telegram</a>
   </div>
-  <a href="#social" class="header-cta">Join Telegram</a>
 </header>
 
 <section class="hero">
@@ -132,7 +124,7 @@
   <p class="social-subtitle">Free signals · Daily analysis · Track record</p>
   <div class="social-buttons">
     <a href="https://t.me/AurumAlgoOfficial" target="_blank" class="social-card">
-      <div class="social-icon icon-tg">📱</div>
+      <div class="social-icon">📱</div>
       <div class="social-text">
         <div class="social-name">Telegram Channel</div>
         <div class="social-handle">@AurumAlgoOfficial</div>
@@ -146,7 +138,6 @@
   <h2 class="pricing-title">Choose Your Edition</h2>
   <p class="pricing-subtitle">Founders pricing · First 100 customers only</p>
   <div class="cards">
-
     <div class="card">
       <span class="card-tag tag-free">🎁 FREE</span>
       <h3 class="card-name">Free Edition</h3>
@@ -166,7 +157,6 @@
       <a href="https://drive.google.com/uc?export=download&id=1q9dyvYLHDPNU77OJ816otCg5ocliJIcH" target="_blank" class="card-cta cta-outline">Download Free</a>
       <a href="https://t.me/AurumAlgoOfficial" target="_blank" class="card-cta cta-small">📱 Join Telegram</a>
     </div>
-
     <div class="card">
       <span class="card-tag tag-pro">⭐ PRO</span>
       <h3 class="card-name">Pro Edition</h3>
@@ -186,7 +176,6 @@
       <a href="https://atlos.io/payment/BWFQ4gmWEd9XWt" target="_blank" class="card-cta cta-primary">Buy Now — $29</a>
       <a href="https://forms.gle/MRZaEJGgoQStrrgJ6" target="_blank" class="card-cta cta-lock">🔒 Lock In Founders Price</a>
     </div>
-
     <div class="card featured">
       <span class="card-tag tag-vip">⚡ VIP · CHAMPION</span>
       <h3 class="card-name">VIP Edition</h3>
@@ -207,7 +196,6 @@
       <a href="https://atlos.io/payment/Ol2GaujCB9eEHo" target="_blank" class="card-cta cta-primary">Buy Now — $59</a>
       <a href="https://forms.gle/MRZaEJGgoQStrrgJ6" target="_blank" class="card-cta cta-lock">🔒 Lock In Founders Price</a>
     </div>
-
     <div class="card">
       <span class="card-tag tag-lifetime">💎 LIFETIME</span>
       <h3 class="card-name">Lifetime Access</h3>
@@ -226,7 +214,6 @@
       <a href="https://atlos.io/payment/WAk6IqyBaaNhX9" target="_blank" class="card-cta cta-primary">Buy Now — $399</a>
       <a href="https://forms.gle/MRZaEJGgoQStrrgJ6" target="_blank" class="card-cta cta-lock">🔒 Lock In Founders Price</a>
     </div>
-
   </div>
 </section>
 
@@ -251,12 +238,8 @@
     <a href="mailto:aurumalgo.official@gmail.com">Email</a>
   </div>
   <div>◆ AURUMALGO™ — The Gold Algorithm</div>
-  <div style="margin-top: 8px; color: #444;">© 2026 AURUMALGO. All rights reserved.</div>
-  <p class="disclaimer">
-    Trading involves substantial risk. Past performance does not guarantee future results.
-    Backtest results are hypothetical. Read DISCLAIMER.txt before use.
-    AURUMALGO is a technical analysis tool, not financial advice.
-  </p>
+  <div style="margin-top:8px;color:#444">© 2026 AURUMALGO. All rights reserved.</div>
+  <p class="disclaimer">Trading involves substantial risk. Past performance does not guarantee future results. Backtest results are hypothetical. Read DISCLAIMER.txt before use. AURUMALGO is a technical analysis tool, not financial advice.</p>
 </footer>
 
 </body>
